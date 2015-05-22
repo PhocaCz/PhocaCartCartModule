@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade" version="3">
+	<name>Phoca Cart Cart</name>
+	<author>Jan Pavelka (www.phoca.cz)</author>
+	<creationDate>18/02/2014</creationDate>
+	<authorEmail></authorEmail>
+	<authorUrl>www.phoca.cz</authorUrl>
+	<copyright>Jan Pavelka</copyright>
+	<license>GNU/GPL</license>
+	<version>3.0.0</version>
+	<description>MOD_PHOCACART_CART_DESCRIPTION</description>
+
+	<files>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<filename module="mod_phocacart_cart">mod_phocacart_cart.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_phocacart_cart.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_phocacart_cart.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			
+
+			</fieldset>	
+		</fields>
+	</config>
+</extension>
