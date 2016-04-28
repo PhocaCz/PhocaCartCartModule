@@ -10,7 +10,9 @@
 defined('_JEXEC') or die('Restricted access');// no direct access
 
 if (!JComponentHelper::isEnabled('com_phocacart', true)) {
-	return JError::raiseError(JText::_('Phoca Cart Error'), JText::_('Phoca Cart is not installed on your system'));
+	$app = JFactory::getApplication();
+	$app->enqueueMessage(JText::_('Phoca Cart Error'), JText::_('Phoca Cart is not installed on your system'), 'error');
+	return;
 }
 if (! class_exists('PhocaCartLoader')) {
     require_once( JPATH_ADMINISTRATOR.'/components/com_phocacart/libraries/loader.php');
@@ -27,6 +29,9 @@ phocacartimport('phocacart.cart.cartdb');
 phocacartimport('phocacart.cart.rendercart');
 phocacartimport('phocacart.product.product');
 phocacartimport('phocacart.attribute.attribute');
+phocacartimport('phocacart.coupon.coupon');
+phocacartimport('phocacart.date.date');
+phocacartimport('phocacart.render.renderjs');
 
 $lang = JFactory::getLanguage();
 //$lang->load('com_phocacart.sys');
@@ -37,9 +42,12 @@ JHTML::stylesheet('media/com_phocacart/css/main.css' );
 $app	= JFactory::getApplication();
 $cart	= new PhocaCartRenderCart();
 $cart->setFullItems();
-echo '<div class="alert alert-info">';
+echo '<div class="alert alert-info ph-cart-module-box"><div id="phItemCartBox">';
 
+// We still not in database, when shipping or payment change
+// we need to reflect it the same way standard checkout does
 // SHIPPING
+
 $shippingEdit	= 0;
 $shippingEdit	= $app->input->get('shippingedit', 0, 'int');
 $shippingId 	= $cart->getShippingId();
@@ -55,6 +63,6 @@ if (isset($paymentMethod['id']) && (int)$paymentMethod['id'] > 0 && $paymentEdit
 }
 
 echo $cart->render();
-echo '</div>';
+echo '</div></div>';
 require(JModuleHelper::getLayoutPath('mod_phocacart_cart'));
 ?>
