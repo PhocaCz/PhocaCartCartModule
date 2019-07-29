@@ -6,7 +6,7 @@
  * @copyright Copyright (C) Jan Pavelka www.phoca.cz
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
- 
+
 defined('_JEXEC') or die;// no direct access
 
 if (!JComponentHelper::isEnabled('com_phocacart', true)) {
@@ -17,33 +17,10 @@ if (!JComponentHelper::isEnabled('com_phocacart', true)) {
 
 JLoader::registerPrefix('Phocacart', JPATH_ADMINISTRATOR . '/components/com_phocacart/libraries/phocacart');
 
-/*
-if (! class_exists('PhocacartLoader')) {
-    require_once( JPATH_ADMINISTRATOR.'/components/com_phocacart/libraries/loader.php');
-}
-
-phocacartimport('phocacart.utils.settings');
-phocacartimport('phocacart.utils.utils');
-phocacartimport('phocacart.path.path');
-phocacartimport('phocacart.path.route');
-phocacartimport('phocacart.currency.currency');
-phocacartimport('phocacart.price.price');
-phocacartimport('phocacart.cart.cart');
-phocacartimport('phocacart.cart.cartdb');
-phocacartimport('phocacart.cart.rendercart');
-phocacartimport('phocacart.product.product');
-phocacartimport('phocacart.attribute.attribute');
-phocacartimport('phocacart.coupon.coupon');
-phocacartimport('phocacart.date.date');
-phocacartimport('phocacart.render.renderjs');
-phocacartimport('phocacart.file.filethumbnail');
-phocacartimport('phocacart.tax.tax');*/
-
 $lang = JFactory::getLanguage();
 //$lang->load('com_phocacart.sys');
 $lang->load('com_phocacart');
 
-JHTML::stylesheet('media/com_phocacart/css/main.css' );
 
 $app	= JFactory::getApplication();
 $cart	= new PhocacartCartRendercart();
@@ -52,14 +29,19 @@ $moduleclass_sfx 						= htmlspecialchars($params->get('moduleclass_sfx'), ENT_C
 $cart->params['display_image'] 			= $params->get( 'display_image', 0 );
 $cart->params['display_checkout_link'] 	= $params->get( 'display_checkout_link', 1 );
 
+
+$s = PhocacartRenderStyle::getStyles();
+
 $p									= array();
-$p['load_component_media']			= $params->get( 'load_component_media', 0 );
+$p['load_component_media']			= $params->get( 'load_component_media', 1 );
 
 if ($p['load_component_media'] == 1) {
 	$media = new PhocacartRenderMedia();
+	$media->loadBase();
 	$media->loadBootstrap();
+	$media->loadSpec();
 } else {
-	JHTML::stylesheet('media/com_phocacart/css/main.css' );
+
 }
 
 $cart->setFullItems();

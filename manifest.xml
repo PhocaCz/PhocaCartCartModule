@@ -4,10 +4,10 @@
 		<description><![CDATA[ Phoca Cart Cart Module - a Joomla! CMS module which displays products ordered in Phoca Cart component in module position. ]]></description>
 		<element>mod_phocacart_cart</element>
 		<type>module</type>
-		<version>3.2.0</version>
-		<infourl title="Phoca Cart Cart Module 3.2.0">https://www.phoca.cz/</infourl>
+		<version>3.3.0</version>
+		<infourl title="Phoca Cart Cart Module 3.3.0">https://www.phoca.cz/</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaCartCartModule/releases/download/3.2.0/mod_phocacart_cart_v3.2.0.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaCartCartModule/releases/download/3.3.0/mod_phocacart_cart_v3.3.0.zip</downloadurl>
 		</downloads>
 		<tags>
 			<tag>stable</tag>

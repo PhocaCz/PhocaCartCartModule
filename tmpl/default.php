@@ -8,7 +8,7 @@
  */
 defined('_JEXEC') or die;
 ?>
-<div class="ph-cart-module-box<?php echo $moduleclass_sfx ;?>">
+<div class="ph-cart-module-box <?php echo $moduleclass_sfx ;?>">
 	<div class="phItemCartBox" id="phItemCartBox">
 		<?php echo $cart->render(); ?>
 	</div>
