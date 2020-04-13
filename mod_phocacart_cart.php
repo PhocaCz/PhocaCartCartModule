@@ -35,13 +35,11 @@ $s = PhocacartRenderStyle::getStyles();
 $p									= array();
 $p['load_component_media']			= $params->get( 'load_component_media', 1 );
 
+$media = PhocacartRenderMedia::getInstance('main');
 if ($p['load_component_media'] == 1) {
-	$media = new PhocacartRenderMedia();
 	$media->loadBase();
 	$media->loadBootstrap();
 	$media->loadSpec();
-} else {
-
 }
 
 $cart->setFullItems();

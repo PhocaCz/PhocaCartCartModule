@@ -26,6 +26,8 @@ Phoca Cart Cart Module - a Joomla! CMS module which displays products ordered in
 
 
 
+
+
 ## Support
 
 [Phoca Forum](https://www.phoca.cz/forum)
@@ -54,7 +56,7 @@ Phoca Cart Cart Module - a Joomla! CMS module which displays products ordered in
 
 ## Version
 
-3.4.0
+3.5.0
 
 
 
