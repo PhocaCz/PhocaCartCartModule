@@ -13,12 +13,15 @@ defined('_JEXEC') or die;
 		<?php echo $cart->render(); ?>
 	</div>
 </div>
-<?php 
+<?php
 // Get count of items and get Total (include coupons)
 // Both variables can be used e.g. if the cart is hidden and slide up is used
-// Add them to DIV ID because they will be changed per AJAX
-// $count = $cart->getCartCountItems();
-// echo '<div class="phItemCartBoxCount" id="phItemCartBoxCount">'. $cart->getCartCountItems().'</div>';
+// Add them to DIV ID because they will change per AJAX
+// Count
+// <div class="phItemCartBoxCount"><Xphp echo $cart->getCartCountItems(); X></div>
+
+// Total amount
+// $price = new PhocacartPrice();
 // $total = $cart->getCartTotalItems();
-// echo '<div class="phItemCartBoxTotal" id="phItemCartBoxTotal">'. $cart->getCartTotalItems().'</div>';
+// <div class="phItemCartBoxTotal"><Xphp echo $price->getPriceFormat($total[0]['brutto']); X></div>
 ?>

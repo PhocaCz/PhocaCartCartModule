@@ -60,7 +60,7 @@ $paymentEdit	= 0;
 $paymentEdit	= $app->input->get('paymentedit', 0, 'int');
 $paymentMethod 	= $cart->getPaymentMethod();
 if (isset($paymentMethod['id']) && (int)$paymentMethod['id'] > 0 && $paymentEdit == 0) {
-	$cart->addPaymentCosts($paymentMethod['id']);
+	$cart->addPaymentCosts($paymentMethod['id']);// validity of payment will be checked
 }
 
 $cart->roundTotalAmount();
@@ -69,5 +69,5 @@ $cart->roundTotalAmount();
 //echo $cart->render();
 //echo '</div></div>';
 
-require(JModuleHelper::getLayoutPath('mod_phocacart_cart'));
+require(JModuleHelper::getLayoutPath('mod_phocacart_cart', $params->get('layout', 'default')));
 ?>

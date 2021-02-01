@@ -2,7 +2,7 @@
 
 
 
-![Phoca Cart Cart Module](https://github.com/PhocaCz/PhocaCartCartModule/blob/master/mod_phocacart_cart.png)
+![Phoca Cart Cart Module](https://github.com/PhocaCz/PhocaCartCartModule/blob/master/mod_phocacart_cart.png?raw=true)
 
 # Phoca Cart Cart Module
 
@@ -56,7 +56,7 @@ Phoca Cart Cart Module - a Joomla! CMS module which displays products ordered in
 
 ## Version
 
-3.5.4
+3.5.5
 
 
 
