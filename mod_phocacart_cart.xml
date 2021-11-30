@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" client="site" method="upgrade" version="3.9">
+<extension type="module" client="site" method="upgrade" version="4.0">
 	<name>mod_phocacart_cart</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>22/09/2021</creationDate>
+	<creationDate>30/11/2021</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>3.5.7</version>
+	<version>4.0.0</version>
 	<description>MOD_PHOCACART_CART_DESCRIPTION</description>
 	<projectName>PhocaCartCartModule</projectName>
 
 	<files>
 		<folder>tmpl</folder>
-		<filename module="mod_phocacart_cart">index.html</filename>
 		<filename module="mod_phocacart_cart">mod_phocacart_cart.php</filename>
+		<filename module="mod_phocacart_cart">index.html</filename>
 	</files>
 
 	<languages>
