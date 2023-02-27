@@ -6,12 +6,9 @@
  * @copyright Copyright (C) Jan Pavelka www.phoca.cz
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
-
-use Joomla\CMS\HTML\HTMLHelper;
-
 defined('_JEXEC') or die;
 
-HTMLHelper::_('bootstrap.dropdown', '.dropdown', []);
+\Joomla\CMS\HTML\HTMLHelper::_('bootstrap.dropdown', '.dropdown', []);
 
 ?><div class="ph-cart-module-box <?php echo $moduleclass_sfx ;?>">
 	<div class="dropdown">

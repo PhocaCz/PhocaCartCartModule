@@ -21,7 +21,7 @@
 		<language tag="en-GB">language/en-GB/en-GB.mod_phocacart_cart.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.mod_phocacart_cart.sys.ini</language>
 	</languages>
-	
+
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
