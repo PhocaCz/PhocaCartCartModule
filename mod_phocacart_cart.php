@@ -25,7 +25,7 @@ $lang->load('com_phocacart');
 $app	= JFactory::getApplication();
 $cart	= new PhocacartCartRendercart();
 
-$moduleclass_sfx 						= htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
+$moduleclass_sfx 						= htmlspecialchars((string)$params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
 $cart->params['display_image'] 			= $params->get( 'display_image', 0 );
 $cart->params['display_checkout_link'] 	= $params->get( 'display_checkout_link', 1 );
 

@@ -2,12 +2,12 @@
 <extension type="module" client="site" method="upgrade" version="4.0">
 	<name>mod_phocacart_cart</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>21/02/2022</creationDate>
+	<creationDate>28/02/2023</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>4.0.0</version>
+	<version>4.0.6Beta</version>
 	<description>MOD_PHOCACART_CART_DESCRIPTION</description>
 	<projectName>PhocaCartCartModule</projectName>
 
@@ -25,35 +25,27 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-			
-			<field name="display_image" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_PHOCACART_CART_FIELD_DISPLAY_IMAGE_LABEL" description="MOD_PHOCACART_CART_FIELD_DISPLAY_IMAGE_DESC">
-	<option value="1">MOD_PHOCACART_CART_YES</option>
-	<option value="0">MOD_PHOCACART_CART_NO</option>
-</field>
+				<field name="display_image" type="radio" layout="joomla.form.field.radio.switcher" default="0" filter="integer" validate="options" label="MOD_PHOCACART_CART_FIELD_DISPLAY_IMAGE_LABEL" description="MOD_PHOCACART_CART_FIELD_DISPLAY_IMAGE_DESC">
+					<option value="0">MOD_PHOCACART_CART_NO</option>
+					<option value="1">MOD_PHOCACART_CART_YES</option>
+				</field>
 
-		<field name="display_checkout_link" type="list" default="1" label="MOD_PHOCACART_CART_FIELD_DISPLAY_CHECKOUT_LINK_LABEL" description="MOD_PHOCACART_CART_FIELD_DISPLAY_CHECKOUT_LINK_DESC">
-	<option value="1">MOD_PHOCACART_CART_YES</option>
-	<option value="2">MOD_PHOCACART_CART_YES_ONLY_WHEN_CART_INCLUDES_PRODUCTS</option>
-	<option value="0">MOD_PHOCACART_CART_NO</option>
-</field>
+				<field name="display_checkout_link" type="list" default="1" label="MOD_PHOCACART_CART_FIELD_DISPLAY_CHECKOUT_LINK_LABEL" description="MOD_PHOCACART_CART_FIELD_DISPLAY_CHECKOUT_LINK_DESC">
+					<option value="1">MOD_PHOCACART_CART_YES</option>
+					<option value="2">MOD_PHOCACART_CART_YES_ONLY_WHEN_CART_INCLUDES_PRODUCTS</option>
+					<option value="0">MOD_PHOCACART_CART_NO</option>
+				</field>
 
-<field name="load_component_media" type="radio" class="btn-group btn-group-yesno" default="1" label="MOD_PHOCACART_CART_FIELD_LOAD_COMPONENT_MEDIA_LABEL" description="MOD_PHOCACART_CART_FIELD_LOAD_COMPONENT_MEDIA_DESC">
-	<option value="1">MOD_PHOCACART_CART_YES</option>
-	<option value="0">MOD_PHOCACART_CART_NO</option>
-</field>
-			</fieldset>	
+				<field name="load_component_media" type="radio" layout="joomla.form.field.radio.switcher" filter="integer" default="1" label="MOD_PHOCACART_CART_FIELD_LOAD_COMPONENT_MEDIA_LABEL" description="MOD_PHOCACART_CART_FIELD_LOAD_COMPONENT_MEDIA_DESC">
+					<option value="0">MOD_PHOCACART_CART_NO</option>
+					<option value="1">MOD_PHOCACART_CART_YES</option>
+				</field>
+			</fieldset>
+
 			<fieldset name="advanced">
-				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+				<field name="layout" type="modulelayout" class="form-select" validate="moduleLayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
 				<field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" rows="3"/>
-				<field name="cache" type="list" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" default="1" filter="integer">
-					<option value="1">JGLOBAL_USE_GLOBAL</option>
-					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
-				</field>
-				<field name="cache_time" type="number" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" default="900" filter="integer"/>
-				<field name="cachemode" type="hidden" default="static">
-					<option value="static"/>
-				</field>
-            </fieldset>
+			</fieldset>
 		</fields>
 	</config>
 
