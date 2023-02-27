@@ -15,13 +15,14 @@
 		<folder>tmpl</folder>
 		<filename module="mod_phocacart_cart">mod_phocacart_cart.php</filename>
 		<filename module="mod_phocacart_cart">index.html</filename>
+		<filename module="mod_phocacart_cart">manifest.xml</filename>
 	</files>
 
 	<languages>
 		<language tag="en-GB">language/en-GB/en-GB.mod_phocacart_cart.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.mod_phocacart_cart.sys.ini</language>
 	</languages>
-
+	
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
