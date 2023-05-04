@@ -43,12 +43,12 @@ if ($p['load_component_media'] == 1) {
 }
 
 $cart->setFullItems();
+
 //echo '<div class="ph-cart-module-box"><div id="phItemCartBox">';
 
 // We still not in database, when shipping or payment change
 // we need to reflect it the same way standard checkout does
 // SHIPPING
-
 $shippingEdit	= 0;
 $shippingEdit	= $app->input->get('shippingedit', 0, 'int');
 $shippingId 	= $cart->getShippingId();
