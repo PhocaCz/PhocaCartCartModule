@@ -8,21 +8,27 @@
  */
 
 defined('_JEXEC') or die;// no direct access
+use Joomla\CMS\Component\ComponentHelper;
+use Joomla\CMS\Factory;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Helper\ModuleHelper;
 
-if (!JComponentHelper::isEnabled('com_phocacart', true)) {
-	$app = JFactory::getApplication();
-	$app->enqueueMessage(JText::_('Phoca Cart Error'), JText::_('Phoca Cart is not installed on your system'), 'error');
+
+
+if (!ComponentHelper::isEnabled('com_phocacart', true)) {
+	$app = Factory::getApplication();
+	$app->enqueueMessage(Text::_('Phoca Cart Error'), Text::_('Phoca Cart is not installed on your system'), 'error');
 	return;
 }
 
 JLoader::registerPrefix('Phocacart', JPATH_ADMINISTRATOR . '/components/com_phocacart/libraries/phocacart');
 
-$lang = JFactory::getLanguage();
+$lang = Factory::getLanguage();
 //$lang->load('com_phocacart.sys');
 $lang->load('com_phocacart');
 
 
-$app	= JFactory::getApplication();
+$app	= Factory::getApplication();
 $cart	= new PhocacartCartRendercart();
 
 $moduleclass_sfx 						= htmlspecialchars((string)$params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
@@ -69,5 +75,5 @@ $cart->roundTotalAmount();
 //echo $cart->render();
 //echo '</div></div>';
 
-require(JModuleHelper::getLayoutPath('mod_phocacart_cart', $params->get('layout', 'default')));
+require(ModuleHelper::getLayoutPath('mod_phocacart_cart', $params->get('layout', 'default')));
 ?>
