@@ -8,33 +8,36 @@
  */
 
 defined('_JEXEC') or die;// no direct access
+
 use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Helper\ModuleHelper;
 
-
+$app = Factory::getApplication();
 
 if (!ComponentHelper::isEnabled('com_phocacart', true)) {
-	$app = Factory::getApplication();
 	$app->enqueueMessage(Text::_('Phoca Cart Error'), Text::_('Phoca Cart is not installed on your system'), 'error');
 	return;
 }
-
-JLoader::registerPrefix('Phocacart', JPATH_ADMINISTRATOR . '/components/com_phocacart/libraries/phocacart');
+if (file_exists(JPATH_ADMINISTRATOR . '/components/com_phocacart/libraries/bootstrap.php')) {
+	// Joomla 5 and newer
+	require_once(JPATH_ADMINISTRATOR . '/components/com_phocacart/libraries/bootstrap.php');
+} else {
+	// Joomla 4
+	JLoader::registerPrefix('Phocacart', JPATH_ADMINISTRATOR . '/components/com_phocacart/libraries/phocacart');
+}
 
 $lang = Factory::getLanguage();
 //$lang->load('com_phocacart.sys');
 $lang->load('com_phocacart');
 
-
-$app	= Factory::getApplication();
 $cart	= new PhocacartCartRendercart();
 
 $moduleclass_sfx 						= htmlspecialchars((string)$params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
 $cart->params['display_image'] 			= $params->get( 'display_image', 0 );
 $cart->params['display_checkout_link'] 	= $params->get( 'display_checkout_link', 1 );
-
+$cart->params['display_product_tax_info'] 	= $params->get( 'display_product_tax_info', 0 );
 
 $s = PhocacartRenderStyle::getStyles();
 

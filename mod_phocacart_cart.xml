@@ -2,12 +2,12 @@
 <extension type="module" client="site" method="upgrade" version="5.0">
 	<name>mod_phocacart_cart</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>17/10/2023</creationDate>
+	<creationDate>11/06/2025</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>5.0.0Beta</version>
+	<version>5.1.1</version>
 	<description>MOD_PHOCACART_CART_DESCRIPTION</description>
 	<projectName>PhocaCartCartModule</projectName>
 
@@ -27,6 +27,11 @@
 		<fields name="params">
 			<fieldset name="basic">
 				<field name="display_image" type="radio" layout="joomla.form.field.radio.switcher" default="0" filter="integer" validate="options" label="MOD_PHOCACART_CART_FIELD_DISPLAY_IMAGE_LABEL" description="MOD_PHOCACART_CART_FIELD_DISPLAY_IMAGE_DESC">
+					<option value="0">MOD_PHOCACART_CART_NO</option>
+					<option value="1">MOD_PHOCACART_CART_YES</option>
+				</field>
+
+				<field name="display_product_tax_info" type="radio" layout="joomla.form.field.radio.switcher" default="0" filter="integer" validate="options" label="MOD_PHOCACART_CART_FIELD_DISPLAY_PRODCUT_TAX_INFO_LABEL" description="MOD_PHOCACART_CART_FIELD_DISPLAY_PRODCUT_TAX_INFO_DESC">
 					<option value="0">MOD_PHOCACART_CART_NO</option>
 					<option value="1">MOD_PHOCACART_CART_YES</option>
 				</field>
