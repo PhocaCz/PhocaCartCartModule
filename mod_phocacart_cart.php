@@ -47,7 +47,7 @@ $p['load_component_media']			= $params->get( 'load_component_media', 1 );
 if ($p['load_component_media'] == 1) {
 	$media = PhocacartRenderMedia::getInstance('main');
 	$media->loadBase();
-	$media->loadBootstrap();
+	//$media->loadBootstrap();
 	$media->loadSpec();
 }
 
@@ -59,14 +59,14 @@ $cart->setFullItems();
 // we need to reflect it the same way standard checkout does
 // SHIPPING
 $shippingEdit	= 0;
-$shippingEdit	= $app->input->get('shippingedit', 0, 'int');
+$shippingEdit	= $app->getInput()->get('shippingedit', 0, 'int');
 $shippingId 	= $cart->getShippingId();
 if (isset($shippingId) && (int)$shippingId > 0 && $shippingEdit == 0) {
 	$cart->addShippingCosts($shippingId);
 }
 // PAYMENT
 $paymentEdit	= 0;
-$paymentEdit	= $app->input->get('paymentedit', 0, 'int');
+$paymentEdit	= $app->getInput()->get('paymentedit', 0, 'int');
 $paymentMethod 	= $cart->getPaymentMethod();
 if (isset($paymentMethod['id']) && (int)$paymentMethod['id'] > 0 && $paymentEdit == 0) {
 	$cart->addPaymentCosts($paymentMethod['id']);// validity of payment will be checked
